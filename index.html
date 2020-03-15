@@ -3,9 +3,6 @@
 
 
 
-
-
-
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Online Score Informed Music Signal Decomposition: Application to Minus One</title></head><body style="margin-top: 70px; margin-right: 15%; margin-left: 15%;">
   
 <div style="text-align: center; font-weight: bold; color: rgb(51, 51, 51); font-family: Arial; background-color: rgb(236, 236, 236);"><big><big><big>Multichannel Singing Voice Separation <br>
@@ -18,202 +15,503 @@ Informed DOA Constrained CNMF</big></big></big><big><big><big></big></big></big>
 <br style="font-family: Arial; color: rgb(51, 51, 51);">
 <span style="font-family: Arial; font-weight: bold; color: rgb(51, 51, 51);">Authors: Antonio J. Muñoz-Montoro, Julio J. </span><span style="font-family: Arial; font-weight: bold; color: rgb(51, 51, 51);">Carabias-Orti, </span><span style="font-family: Arial; font-weight: bold; color: rgb(51, 51, 51);">Archontis Politis and Konstantinos Drossos</span><br style="font-family: Arial; color: rgb(51, 51, 51);">
 <hr style="width: 100%; height: 2px; font-family: Arial;"><br style="font-family: Arial; color: rgb(51, 51, 51);">
-<big style="font-weight: bold; font-family: Arial; text-decoration: underline;">Datasets</big><br style="font-family: Arial; color: rgb(51, 51, 51); text-decoration: underline;">
+<big style="font-weight: bold; font-family: Arial; text-decoration: underline;">Datasets</big><br>
+<br style="font-family: Arial; color: rgb(51, 51, 51); text-decoration: underline;">
 
-<ul style="font-family: Arial;">
-<li><span style="color: rgb(51, 51, 51);">Sample 1: <a href="https://drive.google.com/open?id=17lBkWAEUPvnXijU-twPA3KAX5iaXlyXy" target="_blank">L. van Beethoven - Symphony no. 7, I movement, bars 1-53.</a> <a href="https://drive.google.com/drive/u/2/folders/182PUq-4gK29cNgAdkj3BVLeZY2d4dQrW" target="_blank">[Sources]</a> <a href="https://drive.google.com/drive/u/2/folders/1Aa6nNn9iLpeKabGbnPc9XA9fHKv1eXeu" target="_blank">[Minus One]</a><br>
-</span></li><li><span style="color: rgb(51, 51, 51);">Sample 2: <a href="https://drive.google.com/open?id=17umG3rT80o8Cm_gJahW39NL2MhLQudiz" target="_blank">A. Bruckner - Symphony no. 8, II movement, bars 1-61.</a></span><span style="color: rgb(51, 51, 51);"> <a href="https://drive.google.com/drive/u/2/folders/18qwqHRT6_8mN9n1VgNvwyuJiJq5mAZFn" target="_blank">[Sources]</a> <a href="https://drive.google.com/drive/u/2/folders/1CatmXNA-YVn-hMSu9YTl5M0rZZ63b0pH" target="_blank">[Minus One]</a></span></li><li><span style="color: rgb(51, 51, 51);">Sample 3: <a target="_blank" href="https://drive.google.com/open?id=17zyNcKM-BP0YlytihJCITjSLcctfe74H">G. Mahler -&nbsp;Symphony no. 1, IV movement, bars 1-85.</a></span><span style="color: rgb(51, 51, 51);"> <a href="https://drive.google.com/drive/u/2/folders/19FmE3XyZIIc60n6J5dre2zP-4f87B_wq" target="_blank">[Sources]</a> <a href="https://drive.google.com/drive/u/2/folders/1Bd1uvlm_igFfpFx1xg0HNXVLVhpwGxLA" target="_blank">[Minus One]</a></span></li><li><span style="color: rgb(51, 51, 51);">Sample 4:&nbsp;</span><a style="color: rgb(0, 0, 238);" href="https://drive.google.com/open?id=18-Q0g9WZmZHU6CfnCs0c_u7LRdT0Oxcs" target="_blank">W. A. Mozart - The&nbsp;soprano aria of Donna Elvira from the opera Don Giovanni.</a><span style="color: rgb(51, 51, 51);"> <a href="https://drive.google.com/drive/u/2/folders/1A0ZLu7AnZkpQZ7QKm6G4agVMqHbCjUo2" target="_blank">[Sources]</a> <a href="https://drive.google.com/drive/u/2/folders/1CJOf3OBOAK7TZxDQzkWltFzTvl_g3TRK" target="_blank">[Minus One]</a></span></li>
-</ul><br>
+<div style="text-align: justify; font-family: Arial;"><span style="color: rgb(51, 51, 51);">The
+experimental evaluation was carried out on the Demixing Secret Dataset
+(DSD100). A subset of 50 mixtures has been used for the training
+process together with their corresponding individual sources, and
+another 50 mixtures for the evaluation. </span><br>
 
 
-<hr style="width: 100%; height: 2px; font-family: Arial;"><big style="text-decoration: underline; font-family: Arial; font-weight: bold;"><span style="color: rgb(51, 51, 51);"><small><small></small></small><br>
-Single-channel Source Separation Results</span></big><br style="font-family: Arial;">
-<br style="font-family: Arial;">
-<span style="font-family: Arial; color: rgb(51, 51, 51);"></span>
-<table style="text-align: left; width: 100%; font-family: Arial; height: 134px; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="0">
-  <tbody>
-    <tr>
-      <td style="font-weight: bold; vertical-align: middle; text-align: center; background-color: rgb(236, 236, 236);">Samples<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">Ideal<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">GT<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">ED<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">Soundprism<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">Fritsch<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">Ganseman<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">Miron<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">scoreSynthFree-DTWoff<br>
-      </td>
-      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">scoreSynthFix-DTWon</td>
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Beethoven<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XUNCDZJYZQakMKCVg1j55Y_yDMuZjSAZ">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XSUCnCbwi3PfScc4ruI5qPTdTtLRDVTn">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Wkg0OrEGxpFgF91HbmB0jejPRfuvfzTy">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1VvUXqZW0SRxe9kx5x9dA6a9XE9s-PQi6">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XuWH_gtGGhAcvJjIdHbiPN0DOko_xI7c">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XEAx_Yox527huxrflzs_PGuALOj6XMf5">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Xpw1KzNIppqlW_kB6INJxeAQ1Gaajldu">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WavpH23XAG7f5AtW7iwhihUOUaj-EW0L">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YY569r5WNOOTilszYFgQb6Y-eyFYEmjb">Link</a></td>
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Bruckner<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XYGeIfuELkXxPVroClwW5x92h5_YBZXI">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WQtpQZXVBEar2Ut1Xviqt9OS0EXreBzQ">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Was6w86pmDqvx3XvEWOMRzrn_lmjj7Pp">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Wm3sBrM-crgYwA842nnU1fe6pmpHEU51">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1VQ5fV0xAHq-6F78dP5RfZ2sS4nPMbhQh">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UC1HSTxn5MfUZS49C2tqk5mW20umAEZm">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UU74KdAZKMbMT0UBB2woqXJQISSZ3AQD">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1X2u7YuRxTVsBPdJDFl8XjneOcizIKEK8">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XOCtVOhsht55klAWCd2hhVJaIfwtJM1d">Link</a></td>
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Mahler<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YHfPgLSiflga8NrNGUMPQven86GX5jdR">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YAUHj2HjauTRKFxczTQbhBvKmCpfdvFe">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YVJc0CbCHngP7CBce5zSXJeiUK1EZGJJ">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Y_1m9b2zxnVI2l0clmzcElAtqtc22LdS">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YoeWkphsKHfsfTFNw2aBu-OvkZmwYrfU">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Yc30p7urf9919_ckN48PjRvNwO8jMr3G">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Yc91VjMBA5fr6qegzQIDCLtFE9eEa7Kz">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Y2QXcPbgZVYnIyBeXB5QXge3Cr00xoyO">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YlP7x6ugctBo98S7zKSSgC0qZBMFSFvy">Link</a></td>
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Mozart<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1ULsgsJwGxqWwUE2T1xJ2ir_5RxYyJ2GH">Link</a><br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1YIDHIF4FadPoC1VhpjqOWoQhjEph6SfS">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Vh23DIRIsUEtN-Vk7pCSRh6l-bHXhJVM">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UZFU7VkarhpftM1DOV7S8IhKJ0-5MxV-">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WJquNhyvjN0zWi4rryP9ZpDcEmUKdruG">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UqsWrW_FP4GvbOPfdmPCngSzEFlacLw9">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WTSrdxBUkRvAm510upflfVrvZRXkIYaf">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1XRENUy77-oMvZpcRl5kjwyfhND-8zPMh">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WHJEltX-avzV5V_9we5TVoxJRkk9XdGd">Link</a></td>
-    </tr>
-  </tbody>
-</table>
-<span style="font-family: Arial; color: rgb(51, 51, 51);"></span><br style="font-family: Arial;">
-<hr style="width: 100%; height: 2px; font-family: Arial;"><br style="font-family: Arial;">
-<big style="font-family: Arial; font-weight: bold; text-decoration: underline;"><span style="color: rgb(51, 51, 51);">Minus One Results</span></big><br style="font-family: Arial; color: rgb(51, 51, 51); text-decoration: underline;">
-
-<ul style="font-family: Arial;">
-</ul>
-
-<span style="font-family: Arial; color: rgb(51, 51, 51);">
-</span>
-<table style="text-align: left; width: 100%; font-family: Arial; height: 134px; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="0">
-
-  <tbody>
-    <tr>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">Samples<br>
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">Ideal<br>
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">ED<br>
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">scoreSynthFree-DTWoff
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">scoreSynthFix-DTWon
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">scoreSynthFree-DTWoff-psycho
-      </td>
-      <td style="font-weight: bold; background-color: rgb(236, 236, 236); text-align: center;">scoreSynthFix-DTWon-psycho
-      </td>
-
-      
-      
-      
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Beethoven<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Xm7XSs-MasG1WDqpWEOuDvuSA2B-hCB2">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UK3oLbFScNPTYxqxJsDQ8N27rq5EP6fi">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1VinQz5t8OHpoYdvGA4SaNuSRSFCDod9X">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1WtY4ohXqBWCknTnarFCV2jRDGwkTb3xH">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Vy009oBH9Oo2vFIgl3PQjo-ppCwlsrH5">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UXs-MLo-OgV_eledzL7rcMWhQBkiVp9Y">Link</a></td>
-      
-      
-      
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Bruckner<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Uvcl23yhhc5kB1aM2O-lSSzO6nnRwKg6">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Wlg-b8-RUvSEj5FAHcLMp_agb1LujkSg">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1V-NixyLsLqWpi8DljEgk7FeJwRTa2yCA">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Y7KfUzZs-pa-jrrxSmyPplSqk8PaI8YR">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UlgCPW40OhqVBLeEAmR-0kruEGdaQEhE">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1UNxsCjfkThAFW6mVIt8pE8ZguuORvxcm">Link</a></td>
-      
-      
-      
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Mahler<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1V7lxUrJZ1-1c_AufOgdlv1Y2nRccpmVv">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1VBqPTQ5Sekgiyf9aArf3-yVRtBUBw9nr">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1W0xn3Yh-Aadh38bi6RvcQgdkasFSqB28">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1VSL4Uj39poD5FTnkntQ6gA0xDw54znUY">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1ViYZDv4eNqqjNYONnVSQBz9kr9Zm3CFI">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1Uz5_g6elKwt_BaB-XBUCc_iUrRI7TVwr">Link</a></td>
-      
-      
-      
-    </tr>
-    <tr>
-      <td style="font-style: italic; text-align: center;">Mozart<br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1R21qMwEEOgF2fORdDD-ATjE94ZGGNlsE">Link</a><br>
-      </td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1RBwjr6vJcJz-Bwcvtkf0rKrlvXhJ-FUa">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1R-7uvhq9g3EwUt4mN6MxBow_YBN3hOCu">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1SxtnUEMkxoh4Gq0HocIh7Ox4X_WCl-57">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1R3P1OwoUvwpuVq3hvMtTZMDeWJypTOwI">Link</a></td>
-      <td style="text-align: center;"><a target="_blank" href="https://drive.google.com/drive/u/2/folders/1T1XBAlBwQMuBGpePPOwo4dwtm-z6fCrm">Link</a></td>
-      
-      
-      
-    </tr>
-  </tbody>
-</table>
-
-<span style="font-family: Arial; color: rgb(51, 51, 51);"></span><br>
-<big style="font-family: Arial; font-weight: bold; text-decoration: underline;"><span style="color: rgb(51, 51, 51);"></span></big>
-<hr style="width: 100%; height: 2px;"><big style="font-family: Arial; font-weight: bold; text-decoration: underline;"><span style="color: rgb(51, 51, 51);"><br>
-<span style="color: rgb(51, 51, 51);">Minus Melody Line Example</span></span></big><br style="color: rgb(51, 51, 51);">
-<br style="font-family: Arial; color: rgb(51, 51, 51);">
-<div style="text-align: justify;"><span style="font-family: Arial; color: rgb(51, 51, 51);">Below is provided an example where the melody line has been removed from Mozart's composition.
-The main melody is compounded by the bassoon and clarinet. Therefore,
-both instruments have been removed in the mixture. The first link
-provides the original source. The second one shows the result achieved
-by upmixing the corresponding instruments after the separation process.
-Finally, the result obtained by applying the psychoacoustical mask
-is provided.</span><br style="font-family: Arial; color: rgb(51, 51, 51); text-decoration: underline;">
 </div>
-<ul>
-  <li style="font-family: Arial; color: rgb(51, 51, 51);"><a href="https://drive.google.com/open?id=1DtVKkmubd-rZBoJ7QV9PbuX5p1DRf2mh" target="_blank">Source</a></li>
-  <li style="font-family: Arial; color: rgb(51, 51, 51);"><a href="https://drive.google.com/open?id=1E7rfhKeVpysJDQ51_CUOPDJ18QOZbJ2F" target="_blank">Upmixing</a></li>
-  <li><a style="color: rgb(0, 0, 238);" href="https://drive.google.com/open?id=1Dx7q5N-lz_uiVbqSo7KZpi392PFSzTS2" target="_blank"><span style="font-family: Arial;">Psychoacoustical mask</span></a></li>
-</ul><br>
+<hr style="width: 100%; height: 2px; font-family: Arial;"><big style="text-decoration: underline; font-family: Arial; font-weight: bold;"><span style="color: rgb(51, 51, 51);"><small style="font-family: Arial;"><small></small></small><br>Small Array Results</span></big><br style="font-family: Arial;">
+<br>
+      <table style="text-align: left; width: 100%; font-family: Arial; height: 134px; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle; text-align: center; background-color: rgb(236, 236, 236);">Methods<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">BKS<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">CristinaVane<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">LyndseyOllard<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">MotorTapes<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">SambasevamShanmugam<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">TheSunshineGarciaBand<br>
+      </td>
+      
+      
+      
+    </tr>
+    <tr>
+      <td style="font-style: italic; text-align: center;">Mixture<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo" src="./Small_array/BKS-TooMuch/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo1" src="./Small_array/CristinaVane-SoEasy/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo1').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo1').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo2" src="./Small_array/LyndseyOllard-CatchingUp/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo2').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo2').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo3" src="./Small_array/MotorTapes-Shore/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo3').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo3').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo4" src="./Small_array/SambasevamShanmugam-Kaathaadi/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo4').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo4').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo5" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo5').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo5').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+      
+      
+      
+    </tr>
+    <tr>
+      <td style="font-style: italic; text-align: center;">Random<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo6" src="./Small_array/BKS-TooMuch/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo6').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo6').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo7" src="./Small_array/CristinaVane-SoEasy/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo7').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo7').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo8" src="./Small_array/LyndseyOllard-CatchingUp/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo8').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo8').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo9" src="./Small_array/MotorTapes-Shore/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo9').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo9').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo10" src="./Small_array/SambasevamShanmugam-Kaathaadi/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo10').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo10').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo11" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo11').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo11').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+
+      
+      
+      
+      
+      
+      
+      
+      
+    </tr>
+    <tr>
+      <td style="text-align: center; font-style: italic;">Oracle<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo12" src="./Small_array/BKS-TooMuch/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo12').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo12').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo13" src="./Small_array/CristinaVane-SoEasy/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo13').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo13').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo14" src="./Small_array/LyndseyOllard-CatchingUp/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo14').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo14').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo15" src="./Small_array/MotorTapes-Shore/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo15').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo15').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo16" src="./Small_array/SambasevamShanmugam-Kaathaadi/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo16').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo16').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo17" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo17').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo17').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+
+      
+      
+      
+      
+      
+      
+      
+      
+    </tr><tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">MaD TwinNet<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo18" src="./Small_array/BKS-TooMuch/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo18').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo18').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo19" src="./Small_array/CristinaVane-SoEasy/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo19').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo19').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo20" src="./Small_array/LyndseyOllard-CatchingUp/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo20').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo20').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo21" src="./Small_array/MotorTapes-Shore/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo21').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo21').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo22" src="./Small_array/SambasevamShanmugam-Kaathaadi/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo22').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo22').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo23" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo23').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo23').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">MNMF<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo24" src="./Small_array/BKS-TooMuch/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo24').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo24').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo25" src="./Small_array/CristinaVane-SoEasy/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo25').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo25').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo26" src="./Small_array/LyndseyOllard-CatchingUp/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo26').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo26').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo27" src="./Small_array/MotorTapes-Shore/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo27').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo27').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo28" src="./Small_array/SambasevamShanmugam-Kaathaadi/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo28').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo28').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo29" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo29').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo29').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">CNMF Fix<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo30" src="./Small_array/BKS-TooMuch/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo30').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo30').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo31" src="./Small_array/CristinaVane-SoEasy/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo31').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo31').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo32" src="./Small_array/LyndseyOllard-CatchingUp/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo32').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo32').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo33" src="./Small_array/MotorTapes-Shore/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo33').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo33').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo34" src="./Small_array/SambasevamShanmugam-Kaathaadi/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo34').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo34').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo35" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo35').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo35').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">CNMF Free<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo36" src="./Small_array/BKS-TooMuch/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo36').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo36').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6l0qPbG')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo37" src="./Small_array/CristinaVane-SoEasy/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo37').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo37').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_65d3yzN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo38" src="./Small_array/LyndseyOllard-CatchingUp/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo38').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo38').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6RgUP3j')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo39" src="./Small_array/MotorTapes-Shore/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo39').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo39').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6qUjnLu')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo40" src="./Small_array/SambasevamShanmugam-Kaathaadi/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo40').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo40').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6GkiMJb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo41" src="./Small_array/TheSunshineGarciaBand-ForIAmTheMoon/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo41').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo41').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6WXlP8o')" type="button"></td>
+    </tr>
+
+    </tbody></table><br>
+      
+    
+
+  
+
+<span style="font-family: Arial; color: rgb(51, 51, 51);"></span><br style="font-family: Arial;">
+<hr style="width: 100%; height: 2px; font-family: Arial;"><br style="font-family: Arial;"><big style="text-decoration: underline; font-family: Arial; font-weight: bold;"><span style="color: rgb(51, 51, 51);">Large Array Results</span></big><br>
+<br>
+      <table style="text-align: left; width: 100%; font-family: Arial; height: 134px; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td style="font-weight: bold; vertical-align: middle; text-align: center; background-color: rgb(236, 236, 236);">Methods<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">BKS<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">CristinaVane<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">LyndseyOllard<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">MotorTapes<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">SambasevamShanmugam<br>
+      </td>
+      <td style="font-weight: bold; text-align: center; background-color: rgb(236, 236, 236);">TheSunshineGarciaBand<br>
+      </td>
+      
+      
+      
+    </tr>
+    <tr>
+      <td style="font-style: italic; text-align: center;">Mixture<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo42" src="./Large_array/BKS-TooMuch/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo42').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo42').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo43" src="./Large_array/CristinaVane-SoEasy/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo43').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo43').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo44" src="./Large_array/LyndseyOllard-CatchingUp/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo44').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo44').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo45" src="./Large_array/MotorTapes-Shore/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo45').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo45').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo46" src="./Large_array/SambasevamShanmugam-Kaathaadi/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo46').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo46').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo47" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/Original/mixture.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo47').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo47').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+      
+      
+      
+    </tr>
+    <tr>
+      <td style="font-style: italic; text-align: center;">Random<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo48" src="./Large_array/BKS-TooMuch/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo48').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo48').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo49" src="./Large_array/CristinaVane-SoEasy/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo49').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo49').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo50" src="./Large_array/LyndseyOllard-CatchingUp/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo50').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo50').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo51" src="./Large_array/MotorTapes-Shore/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo51').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo51').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo52" src="./Large_array/SambasevamShanmugam-Kaathaadi/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo52').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo52').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo53" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/Random/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo53').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo53').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+
+      
+      
+    </tr>
+    <tr>
+      <td style="text-align: center; font-style: italic;">Oracle<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo54" src="./Large_array/BKS-TooMuch/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo54').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo54').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo55" src="./Large_array/CristinaVane-SoEasy/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo55').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo55').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo56" src="./Large_array/LyndseyOllard-CatchingUp/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo56').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo56').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo57" src="./Large_array/MotorTapes-Shore/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo57').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo57').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo58" src="./Large_array/SambasevamShanmugam-Kaathaadi/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo58').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo58').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo59" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/Oracle/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo59').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo59').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+
+      
+      
+      
+      
+      
+      
+      
+      
+    </tr><tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">MaD TwinNet<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo60" src="./Large_array/BKS-TooMuch/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo60').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo60').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo61" src="./Large_array/CristinaVane-SoEasy/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo61').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo61').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo62" src="./Large_array/LyndseyOllard-CatchingUp/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo62').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo62').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo63" src="./Large_array/MotorTapes-Shore/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo63').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo63').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo64" src="./Large_array/SambasevamShanmugam-Kaathaadi/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo64').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo64').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo65" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/MaD TwinNet/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo65').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo65').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">MNMF<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo66" src="./Large_array/BKS-TooMuch/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo66').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo66').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo67" src="./Large_array/CristinaVane-SoEasy/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo67').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo67').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo68" src="./Large_array/LyndseyOllard-CatchingUp/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo68').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo68').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo69" src="./Large_array/MotorTapes-Shore/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo69').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo69').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo70" src="./Large_array/SambasevamShanmugam-Kaathaadi/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo70').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo70').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo71" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/MNMF/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo71').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo71').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">CNMF Fix<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo72" src="./Large_array/BKS-TooMuch/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo72').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo72').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo73" src="./Large_array/CristinaVane-SoEasy/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo73').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo73').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo74" src="./Large_array/LyndseyOllard-CatchingUp/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo74').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo74').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo75" src="./Large_array/MotorTapes-Shore/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo75').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo75').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo76" src="./Large_array/SambasevamShanmugam-Kaathaadi/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo76').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo76').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo77" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/CNMF Fix/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo77').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo77').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center; font-style: italic;">CNMF Free<br>
+      </td>
+      <td style="text-align: center;"><audio id="demo78" src="./Large_array/BKS-TooMuch/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo78').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo78').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6SkkMVb')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo79" src="./Large_array/CristinaVane-SoEasy/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo79').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo79').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6psyUgN')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo80" src="./Large_array/LyndseyOllard-CatchingUp/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo80').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo80').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tCfsST')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo81" src="./Large_array/MotorTapes-Shore/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo81').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo81').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6YtMaD6')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo82" src="./Large_array/SambasevamShanmugam-Kaathaadi/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo82').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo82').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6tFc3SO')" type="button"></td>
+      <td style="text-align: center;"><audio id="demo83" src="./Large_array/TheSunshineGarciaBand-ForIAmTheMoon/CNMF Free/voice.wav"></audio>
+          <input value="Play" onclick="document.getElementById('demo83').play()" type="button">
+          <input value="Pause" onclick="document.getElementById('demo83').pause()" type="button">
+          <input value="Download" onclick="window.open('https://www.myqnapcloud.com/smartshare/603e551inp2m2685r841a8ac_6iNASHS')" type="button"></td>
+    </tr>
+
+    </tbody>
+</table>
+<br style="font-family: Arial;">
+<br>
 <hr style="width: 100%; height: 2px;"><br>
 
 
